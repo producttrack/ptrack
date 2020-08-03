@@ -1,4 +1,4 @@
-package com.finalproject.producttrack.producttrack;
+package com.finalproject.producttrack.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
