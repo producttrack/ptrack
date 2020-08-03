@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/product_track?currentSchema=java_app
-    username: postgres
-    password: 2020327GhbdtN
+    username: [локальный_username укажешь]
+    password: [локальный_password укажешь]
   jpa:
     show-sql: true
     properties:
