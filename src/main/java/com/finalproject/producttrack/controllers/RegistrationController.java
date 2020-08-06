@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/registration")
+@RequestMapping("/")
 public class RegistrationController {
     private UserService userService;
 
@@ -18,14 +18,14 @@ public class RegistrationController {
         this.userService = userService;
     }
 
-    @GetMapping()
+    @GetMapping("/registration")
     public String showRegistrationForm() {
         return "registration";
     }
 
-    @PostMapping()
-    public ModelAndView saveNewUser(@RequestParam String password, @RequestParam String repeat_password, @ModelAttribute User user, ModelMap modelMap) {
-        if (!password.equals(repeat_password)) {
+    @PostMapping("/registration")
+    public ModelAndView saveNewUser(@RequestParam String repeat_password, @ModelAttribute User user, ModelMap modelMap) {
+        if (!user.getLogin().equals(repeat_password)) {
             // TODO display any message on the page
             System.out.println("You do not repeat password. Try again");
             return new ModelAndView("redirect:/registration");

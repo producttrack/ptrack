@@ -1,4 +1,6 @@
 server:
+  tomcat:
+    use-relative-redirects: true
   port: 8080
   servlet:
     context-path: /

@@ -14,8 +14,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User saveOrUpdateUser(User user) {
-        return userRepository.save(user);
+    public void saveOrUpdateUser(User user) {
+        userRepository.save(user);
     }
 
     public boolean userExistWithProvidedEmail(String email) {

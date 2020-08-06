@@ -29,7 +29,7 @@ public class AuthorizationController {
             model.addAttribute("name", login);
             return new ModelAndView("redirect:/greeting", model);
         }
-        System.out.println("There is no such login. Please register or repeat enter");
+        System.out.println("Login or password incorrect. Please register.");
         return new ModelAndView("redirect:/authorize");
     }
 }
