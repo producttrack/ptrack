@@ -3,22 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>User registration</title>
+    <link href="../static/registration.css" th:href="@{/registration.css}" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <form th:action = "@{/registration}" method = "post">
-            <input type="text" name="login" placeholder="логин"/>
-            <br>
-            <input type="email" name="email" placeholder="email"/>
-            <br>
-            <input type="text" name="password" placeholder="пароль"/>
-            <br>
-            <input type="text" name="repeat_password" placeholder="повторите пароль"/>
-            <br>
-            <button type="submit">Регистрация</button>
-        </form>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <form id="login" class="input-group" th:action = "@{/authorize}" method = "post">
+                <input type="text" class="input-field" name="login" placeholder="Username" required>
+                <input type="text" class="input-field" name="password" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <form id="register" class="input-group" th:action = "@{/registration}" method = "post">
+                <input type="text" class="input-field" name="login" placeholder="Username" required>
+                <input type="email" class="input-field" name="email" placeholder="Email" required>
+                <input type="text" class="input-field" name="password" placeholder="Password" required>
+                <input type="text" class="input-field" name="repeat_password" placeholder="Repeat password" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+
     </div>
-    <div>To the <a href="/">Main page</a>
-    </div>
+    <script>
+        var  x = document.getElementById("login");
+        var  y = document.getElementById("register");
+        var  z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+    </script>
+<!--    <div>-->
+<!--        <form th:action = "@{/registration}" method = "post">-->
+<!--            <input type="text" name="login" placeholder="логин"/>-->
+<!--            <br>-->
+<!--            <input type="email" name="email" placeholder="email"/>-->
+<!--            <br>-->
+<!--            <input type="text" name="password" placeholder="пароль"/>-->
+<!--            <br>-->
+<!--            <input type="text" name="repeat_password" placeholder="повторите пароль"/>-->
+<!--            <br>-->
+<!--            <button type="submit">Регистрация</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <div>To the <a href="/">Main page</a>-->
+<!--    </div>-->
 </body>
 </html>

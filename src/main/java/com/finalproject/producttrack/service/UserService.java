@@ -22,6 +22,10 @@ public class UserService {
         return userRepository.findOneByEmail(email) != null ;
     }
 
+    public boolean userExistWithProvidedLogIn(String login) {
+        return userRepository.findOneByLogin(login) != null;
+    }
+
     public User getUserByLogin(String login) {
         return userRepository.findOneByLogin(login);
     }
